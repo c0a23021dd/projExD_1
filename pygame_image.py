@@ -20,7 +20,6 @@ def main():
 
         screen.blit(bg_img, [0, 0])  #screan　Surefaceに背景画像を張り付ける
         screen.blit(kk_img,[300,200])
-        screen.blit(kk_img.png,)
         pg.display.update()
         tmr += 1        
         clock.tick(10)
