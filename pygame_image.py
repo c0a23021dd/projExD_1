@@ -13,16 +13,17 @@ def main():
     kk_img=pg.image.load("fig/3.png")
     kk_img=pg.transform.flip(kk_img,True,False)
     tmr = 0
-    
+    a=300
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
+        x=tmr%800
 
-        screen.blit(bg_img, [0, 0])  #screan　Surefaceに背景画像を張り付ける
-        screen.blit(kk_img,[300,200])
+        screen.blit(bg_img, [-x, 0])  #screan　Surefaceに背景画像を張り付ける
+        screen.blit(kk_img,[a,200])
         pg.display.update()
-        tmr += 1        
-        clock.tick(200)
+        tmr += 1   
+        clock.tick(0)
 
 
 if __name__ == "__main__":
