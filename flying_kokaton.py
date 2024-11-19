@@ -19,16 +19,19 @@ def main():
     while True:
         for event in pg.event.get():
             if event.type == pg.QUIT: return
+        dx=-1
+        dy=0
         key_lst=pg.key.get_pressed()
         #print(key_lst[pg.K_UP],key_lst[pg.K_DOWN],key_lst[pg.K_LEFT],key_lst[pg.K_RIGHT])
         if key_lst[pg.K_UP]:
-            kk_lect.move_ip(0,-1)
+            dy=-1
         if key_lst[pg.K_DOWN]:
-            kk_lect.move_ip(0, +1)
+            dy=+1
         if key_lst[pg.K_LEFT]:
-            kk_lect.move_ip(-1,0)
+            dx=-1
         if key_lst[pg.K_RIGHT]:
-            kk_lect.move_ip(+1,0)
+            dx=+2
+        kk_lect.move_ip(dx,dy)
         x=-(tmr%3200)#練習6-2
 
         screen.blit(bg_img, [x, 0])  #screan　Surefaceに背景画像を張り付ける
